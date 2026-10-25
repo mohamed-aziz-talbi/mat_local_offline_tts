@@ -30,6 +30,16 @@ Make sure you have the following installed on your local machine:
 * [Ollama](https://ollama.com/) (running locally for LLM support)
 * Git
 
+---
+
+## 🐛 Known Issues & Active Development
+
+I am actively tuning and optimizing the local pipeline. Current known behaviors being addressed include:
+* **Audio Intermittence:** Occasional latency spikes when switching between different TTS backends on lower-spec hardware configurations.
+* **Model Synchronization:** Context window handoffs between local LLMs and multi-engine TTS streaming require further optimization for real-time responsiveness.
+
+If you encounter unexpected errors or have feedback, please check the [Issues](../../issues) tab or open a new bug report.
+
 ### Installation
 
 1. **Clone the repository:**

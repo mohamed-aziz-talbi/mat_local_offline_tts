@@ -1,0 +1,202 @@
+==================== PAGE 1 ====================
+Local AI for Startups | BI Project Proposal
+Page 1
+LOCAL AI FOR STARTUPS
+A Business Intelligence study of economic, technical and environmental sustainability
+PROJECT OVERVIEW
+This project evaluates whether locally hosted or hybrid artificial intelligence can help startups and small businesses control
+operating costs, reduce dependence on commercial APIs, retain operational control and minimise environmental impact.
+UPDATED RESEARCH QUESTION
+To what extent can local and hybrid artificial intelligence solutions help startups reduce operating costs and
+dependence on commercial APIs while maintaining adequate performance and minimising environmental
+impact?
+Evaluation dimensions: economic sustainability  technical performance  environmental sustainability  operational autonomy
+
+==================== PAGE 2 ====================
+Local AI for Startups | BI Project Proposal
+Page 2
+1. Topic and Context
+AI providers such as OpenAI, Anthropic and Google offer models through paid subscriptions and APIs. These services support
+writing, document analysis, customer assistance, data processing and report generation. Costs may grow with usage, and
+APIs may impose rate limits or quotas.
+An alternative is to run models on hardware owned or controlled by the organisation. Local deployment can reduce some
+variable costs and increase control over data, but it also introduces hardware investment, electricity consumption, maintenance
+and infrastructure-management requirements. Cloud, local and hybrid strategies should therefore be compared rather than
+assuming one is always best.
+2. Motivation
+ Economic: assess affordability for startups with limited budgets.
+ 
+ Technical: evaluate model capability, latency, throughput, quality and reliability.
+ 
+ Environmental: estimate energy use and carbon emissions, including relevant hardware lifecycle considerations.
+ 
+ Decision-making: provide evidence to choose a cloud, local or hybrid architecture.
+ 
+3. Research Problem
+To what extent can local and hybrid AI help startups and small businesses reduce operating costs, limit
+dependence on commercial APIs, maintain performance suited to their needs and minimise environmental
+impact?
+The research covers four dimensions:
+ Economic: total cost of ownership, cost per task, savings and payback period.
+ 
+ Technical: latency, throughput, answer quality and reliability.
+ 
+ Environmental: energy consumption, estimated greenhouse gas emissions and hardware lifecycle.
+ 
+ Operational autonomy: API dependence, rate limits, data control and service availability.
+ 
+==================== PAGE 3 ====================
+Local AI for Startups | BI Project Proposal
+Page 3
+4. Raw Data Collection
+Combine public information with controlled experiments. Potential data sources include:
+Source
+Data to collect
+API providers
+Pricing, quotas, rate limits and available service information
+Local AI models
+Model/version, hardware requirements and measured performance
+Hardware infrastructure
+Purchase price, power draw, expected lifetime and maintenance assumptions
+Experimental tests
+Response time, throughput, answer quality, errors and energy use
+Electricity data
+Relevant grid carbon-intensity factor for the location and period
+Business scenarios
+Request volume, users, task type, workload and budget
+Experimental consistency: compare equivalent tasks using the same test dataset and consistent evaluation criteria. If
+company data is unavailable, build a documented experimental dataset and state assumptions explicitly.
+5. Data Transformation (ETL)
+ Extract: gather provider prices, model characteristics, test results, energy measurements, hardware data and electricity
+ carbon-intensity factors.
+ Transform: clean records, standardise units, handle missing values, align time periods and calculate cost and environmental
+ indicators.
+ Load: store consolidated data in a database or warehouse for BI analysis.
+ 
+Suggested tools: Python and Pandas for processing, SQL for storage, and Power BI for analysis and reporting.
+Environmental data quality
+Measure energy directly where possible using a power meter or reliable telemetry. If energy or cloud emissions must be
+estimated, document the method, assumptions and uncertainty. Do not present estimates as direct measurements.
+6. Data Warehouse Design
+A star schema is a practical starting point. Dimension tables describe models, time and workload scenarios; fact tables store
+performance, cost and environmental measurements.
+Table
+Example attributes / measures
+DIM_MODEL
+Provider, model name/version, deployment type
+DIM_TIME
+Date, month, year
+DIM_SCENARIO
+Task type, request volume, business profile
+FACT_AI_IMPACT
+Cost, latency, quality, throughput, energy (kWh), estimated CO■e, successful tasks
+Optional FACT_HARDWARE
+Hardware energy, utilisation, lifetime and allocation assumptions
+Warehouse model options
+ Star schema: straightforward and well suited to Power BI.
+ 
+ Snowflake schema: normalises dimensions into additional related tables.
+ 
+ Fact constellation: uses multiple fact tables that share dimensions; useful if cost, performance and environmental data have
+ different levels of detail.
+
+==================== PAGE 4 ====================
+Local AI for Startups | BI Project Proposal
+Page 4
+7. KPI Table
+KPIs should be measurable, clearly defined, actionable and calculated consistently. Distinguish direct measurements from
+modelled estimates.
+KPI
+Formula / method
+Purpose
+Total monthly cost
+Fixed costs + variable costs
+Compare spending
+Cost per 1,000 tasks
+(Total cost / successful tasks) × 1,000
+Measure useful-work cost
+Estimated savings
+Baseline cost − evaluated option cost
+Quantify cost difference
+Average latency
+Total response time / number of requests
+Measure responsiveness
+Throughput
+Requests processed per second
+Measure capacity
+Success rate
+Successful requests / total requests × 100
+Measure reliability
+Answer quality
+Score from a defined evaluation protocol
+Compare output quality
+Energy per 1,000 tasks
+Measured or estimated kWh / successful tasks × 1,000
+Compare energy efficiency
+Carbon intensity per task
+Estimated kg CO■e / successful tasks
+Compare emissions per useful task
+Hardware utilisation
+Used capacity / available capacity
+Identify underused resources
+Payback period
+Initial investment / periodic net savings
+Estimate investment recovery
+Carbon calculation: estimated operational emissions can be calculated as energy consumed (kWh) × an appropriate
+electricity emissions factor (kg CO■e/kWh). Choose a factor that matches the relevant location, period and accounting method.
+Include uncertainty and avoid treating this simplified calculation as a complete lifecycle assessment.
+Fair comparison: include hardware purchase and depreciation, electricity, maintenance and administration time for local
+deployment. For cloud deployment, include subscriptions and API charges. Hardware manufacturing, data-centre overheads
+and cooling should be included when credible data is available; otherwise document the boundary and limitations.
+8. Power BI Dashboards
+8.1 Executive / Decision Dashboard
+ Monthly cost, estimated savings, break-even point, return on investment and cost by workload volume.
+ 
+8.2 Technical Performance Dashboard
+ Model comparison by answer quality, latency, throughput, error rate and reliability.
+ 
+8.3 Environmental Impact Dashboard
+ Energy use, estimated CO■e per 1,000 successful tasks, energy efficiency by model, and sensitivity to different electricity
+ carbon-intensity factors.
+8.4 Operational Autonomy Dashboard
+ Request volumes, resource utilisation, errors, API-limit events and external-service dependence, where data is available.
+ 
+A useful cross-dashboard visual is a cost-versus-carbon comparison, helping decision-makers examine financial and
+environmental trade-offs together.
+
+==================== PAGE 5 ====================
+Local AI for Startups | BI Project Proposal
+Page 5
+9. Data Mining and Decision Support
+ Regression: estimate monthly cost or energy use as a function of request volume and other relevant variables.
+ 
+ K-means clustering: group workload scenarios by cost, performance, energy use and operational requirements.
+ 
+ Break-even analysis: estimate the workload volume at which local deployment becomes economically attractive under
+ stated assumptions.
+ Workload forecasting: estimate future resource needs if sufficient historical data is available.
+ 
+ Multi-criteria decision analysis: compare cloud, local and hybrid options using transparent criteria for cost, performance,
+ autonomy and environmental impact.
+The final objective is a decision-support tool that recommends an architecture based on a company’s budget, workload, quality
+requirements, data constraints and sustainability goals.
+Methodological Recommendations
+For scientifically meaningful results, run repeatable tests on several local models and at least one cloud-based service, using
+comparable tasks and a documented evaluation protocol. Compare solutions at a similar level of answer quality and report the
+hardware, software versions, workload, duration and measurement method.
+Local deployment is not automatically cheaper or greener. It uses electricity and hardware that must be manufactured,
+maintained and eventually replaced. Cloud infrastructure also consumes resources, but provider-specific energy and emissions
+data may be unavailable. The study should report evidence, assumptions and uncertainty instead of claiming a universal
+winner.
+Suggested Project Scope
+ BI-only study: analyse public and documented data, clearly identifying assumptions and gaps.
+ 
+ BI + experimental prototype: run a small local model and a cloud alternative, measure comparable tasks and use the results
+ in the dashboards. This can provide stronger empirical evidence if time, hardware and service access allow.
+References and methodological resources
+Green Software Foundation — Software Carbon Intensity (SCI) specification: https://sci.greensoftware.foundation/
+International Energy Agency — Energy and AI: https://www.iea.org/topics/energy-and-ai
+These resources provide methodological context. Current provider prices, API limits and location-specific electricity emissions factors should be
+checked against official, up-to-date sources during implementation.
+Evidence note: this document is a project proposal, not a report of completed experiments. It contains no claimed measured savings, emissions
+values or verified performance rankings.
